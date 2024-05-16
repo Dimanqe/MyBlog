@@ -5,5 +5,5 @@
 /// </summary>
 public class UsersViewModel
 {
-    public List<UserViewModel> Users { get; set; }
+    public List<UserViewModel> Users { get; set; } = new();
 }

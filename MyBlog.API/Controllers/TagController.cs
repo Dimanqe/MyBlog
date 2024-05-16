@@ -4,7 +4,7 @@ using MyBlog.BLL.Services.Interfaces;
 using MyBlog.BLL.ViewModels.Tags.Request;
 using MyBlog.DAL.Models.Tags;
 
-namespace MyBlog.App.Controllers;
+namespace MyBlog.API.Controllers;
 
 [ApiController]
 [Route("TagController")]

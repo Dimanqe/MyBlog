@@ -6,7 +6,7 @@ using MyBlog.BLL.ViewModels.Articles.Request;
 using MyBlog.BLL.ViewModels.Articles.Response;
 using MyBlog.DAL.Models.Users;
 
-namespace MyBlog.App.Controllers;
+namespace MyBlog.API.Controllers;
 
 [ApiController]
 [Route("ArticleController")]

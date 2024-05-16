@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MyBlog.BLL.ViewModels.Tags.Request;
 
-namespace MyBlog.BLL.Validators.Users;
+namespace MyBlog.BLL.Validators.Tags;
 
 public class EditTagViewModelValidator : AbstractValidator<EditTagViewModel>
 {

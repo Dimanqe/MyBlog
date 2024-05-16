@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MyBlog.BLL.Services.Interfaces;
-using MyBlog.BLL.ViewModels.Comments.Request;
+using MyBlog.BLL.ViewModels.Comments;
 using MyBlog.DAL.Models.Comments;
 using MyBlog.DAL.Repositories;
 using MyBlog.DAL.Repositories.Interfaces;

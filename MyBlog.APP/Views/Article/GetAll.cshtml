@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.BLL.ViewModels.Articles.Response.ArticlesViewModel
+@{
+    ViewData["Title"] = "List of Articles";
+}
+@{
+    <a class="btn btn-sm btn-primary" asp-area="" asp-controller="Article" asp-action="Create">Create Article</a>
+    <p></p>
+    <h5 class="card-title">Все статьи:</h5>
+    @if (Model.Articles.Count == 0)
+    {
+
+        <h5 class="card-title">Нет данных для отображения</h5>
+    }
+    else
+    {
+        @foreach (var article in @Model.Articles)
+        {
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title" hidden >@article.Id</h5>
+                    <h5 class="card-title">Author: @article.User.Firstname @article.User.Lastname</h5>
+                    <h5 class="card-title">Title: @article.Title</h5>
+                    <h5 class="card-title">Tags:
+                        @foreach (var tag in article.Tags)
+                        {
+                            <span>@tag.Name; </span>
+                        }
+                    </h5>
+                </div>
+            </div>
+            <a class="btn btn-sm btn-primary" method="get" asp-controller="Article" asp-action="Get" asp-route-id="@article.Id">Посмотреть</a>
+            @if (User.IsInRole("Администратор") || User.IsInRole("Модератор"))
+            {
+                <a class="btn btn-sm btn-primary" method="get" asp-controller="Article" asp-action="Edit" asp-route-id="@article.Id">Редактировать</a>
+                <form method="post" asp-controller="Article" asp-action="Delete" asp-route-id="@article.Id">
+                    <input class="btn alert-danger button" type="submit" value="Удалить" />
+                </form>
+            }
+            <p></p>
+        }
+    }
+}

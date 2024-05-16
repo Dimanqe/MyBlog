@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MyBlog.BLL.ViewModels.Roles.Request;
 
-namespace MyBlog.BLL.Validators.Users;
+namespace MyBlog.BLL.Validators.Roles;
 
 public class CreateRoleViewModelValidator : AbstractValidator<CreateRoleViewModel>
 {

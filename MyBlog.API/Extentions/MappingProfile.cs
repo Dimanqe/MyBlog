@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MyBlog.BLL.ViewModels.Articles.Request;
 using MyBlog.BLL.ViewModels.Articles.Response;
-using MyBlog.BLL.ViewModels.Comments.Request;
+using MyBlog.BLL.ViewModels.Comments;
 using MyBlog.BLL.ViewModels.Tags.Request;
 using MyBlog.BLL.ViewModels.Users.Request;
 using MyBlog.BLL.ViewModels.Users.Response;

@@ -1,0 +1,40 @@
+﻿@model MyBlog.BLL.ViewModels.Articles.Response.ArticleViewModel
+@{
+    ViewData["Title"] = "Article's information";
+}
+@{
+    <h5 class="card-title">Данные статьи: @Model.Title</h5>
+    <div class="card w-75">
+        <div class="card-body">
+            <h5 class="card-title">Date: @Model.CreatedDate</h5>
+            <h5 class="card-title">Author: @Model.AuthorName</h5>
+            <h5 class="card-title">Title: @Model.Title</h5>
+            <h5 class="card-title">Content: @Model.Content</h5>
+            <h5>
+                Tags:
+                @foreach (var tag in Model.Tags)
+                {
+                    <span>@tag.Name; </span>
+                }
+            </h5>
+            <a class="btn btn-sm btn-primary" method="get" asp-controller="Comment" asp-action="Create" asp-route-articleId="@Model.Id">Добавить комментарий</a>
+        </div>
+    </div>
+    @foreach (var comment in Model.Comments)
+    {
+        <div class="card w-75">
+            <div class="card-body">
+                <p>Username: @comment.Author</p>
+                <p>Comment: @comment.Text</p>
+                @if (User.IsInRole("Администратор") || User.IsInRole("Модератор"))
+                {
+                    <div>
+                        <a class="btn btn-sm btn-primary" method="get" asp-controller="Comment" asp-action="Edit" asp-route-Id="@comment.Id">Редактировать</a>
+                        <a class="btn alert-danger button" method="get" asp-controller="Comment" asp-action="Delete" asp-route-Id="@comment.Id">Удалить</a>
+                    </div>
+                }
+                <p></p>
+            </div>
+        </div>
+    }   
+}

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using MyBlog.BLL.ViewModels.Comments.Request;
+using MyBlog.BLL.ViewModels.Comments;
 
-namespace MyBlog.BLL.Validators.Users;
+namespace MyBlog.BLL.Validators.Comments;
 
 public class CreateCommentViewModelValidator : AbstractValidator<CreateCommentViewModel>
 {

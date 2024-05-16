@@ -22,7 +22,7 @@ public class DataDefaultService : IDataDefaultService
 
     public async Task SeedDefaultData()
     {
-        var basicUser = new RegisterUserViewModel
+        var admin = new RegisterUserViewModel
         {
             Login = "Administrator",
             Email = "admin@gmail.com",
@@ -38,7 +38,7 @@ public class DataDefaultService : IDataDefaultService
             Firstname = "Moder",
             Lastname = "Petrov"
         };
-        var admin = new RegisterUserViewModel
+        var basicUser = new RegisterUserViewModel
         {
             Login = "User",
             Email = "user@gmail.com",
@@ -67,19 +67,19 @@ public class DataDefaultService : IDataDefaultService
 
         if (_userService.Users.FirstOrDefault(x => x.UserName == "Administrator") == null)
         {
-            await _userService.CreateAsync(user, basicUser.Password);
+            await _userService.CreateAsync(user2, admin.Password);
             if (_roleService.Roles.FirstOrDefault(x => x.Name == "Администратор") == null)
                 await _roleService.CreateAsync(adminRole);
-            await _userService.AddToRoleAsync(user,
+            await _userService.AddToRoleAsync(user2,
                 _roleService.Roles.FirstOrDefault(x => x.Name == "Администратор").Name);
         }
 
         if (_userService.Users.FirstOrDefault(x => x.UserName == "User") == null)
         {
-            await _userService.CreateAsync(user2, admin.Password);
+            await _userService.CreateAsync(user, basicUser.Password);
             if (_roleService.Roles.FirstOrDefault(x => x.Name == "Пользователь") == null)
                 await _roleService.CreateAsync(userRole);
-            await _userService.AddToRoleAsync(user2,
+            await _userService.AddToRoleAsync(user,
                 _roleService.Roles.FirstOrDefault(x => x.Name == "Пользователь").Name);
         }
     }

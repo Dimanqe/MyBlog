@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.BLL.ViewModels.Tags.Request.EditTagViewModel
+@{
+	ViewData["Title"] = "Edition-tag page";
+}
+
+<div class="container-page">
+	<h2 class="title-margin">Редактирование тега: </h2>
+	<form method="post" asp-controller="Tag" asp-action="Edit">
+		<div style="margin-bottom: 5px">
+			<input hidden="true" asp-for="Id" readonly="true"/>
+			<label asp-for="Name" /><br />
+			<input class="form-control" asp-for="Name" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div>
+			<input class="btn btn-sm btn-primary" type="submit" value="Сохранить" />
+		</div>
+	</form>
+</div>

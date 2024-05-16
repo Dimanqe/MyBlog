@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.API", "MyBlog.API\My
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.DAL", "MyBlog.DAL\MyBlog.DAL.csproj", "{8E448E27-5C95-4A76-8891-1EDDE25351B3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.App", "MyBlog.APP\MyBlog.App.csproj", "{822A503A-7D1D-49F1-B5FA-4B28F0AC5879}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8E448E27-5C95-4A76-8891-1EDDE25351B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E448E27-5C95-4A76-8891-1EDDE25351B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E448E27-5C95-4A76-8891-1EDDE25351B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822A503A-7D1D-49F1-B5FA-4B28F0AC5879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822A503A-7D1D-49F1-B5FA-4B28F0AC5879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822A503A-7D1D-49F1-B5FA-4B28F0AC5879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822A503A-7D1D-49F1-B5FA-4B28F0AC5879}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

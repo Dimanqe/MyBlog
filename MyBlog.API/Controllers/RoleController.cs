@@ -4,7 +4,7 @@ using MyBlog.BLL.Services.Interfaces;
 using MyBlog.BLL.ViewModels.Roles.Request;
 using MyBlog.DAL.Models.Roles;
 
-namespace MyBlog.App.Controllers;
+namespace MyBlog.API.Controllers;
 
 [ApiController]
 [Route("RoleController")]

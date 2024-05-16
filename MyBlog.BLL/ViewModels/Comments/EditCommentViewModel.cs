@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MyBlog.BLL.ViewModels.Comments.Request;
+namespace MyBlog.BLL.ViewModels.Comments;
 
 /// <summary>
 ///     Модель обновления комментария

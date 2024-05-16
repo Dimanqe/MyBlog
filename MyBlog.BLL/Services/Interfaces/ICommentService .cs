@@ -1,4 +1,4 @@
-﻿using MyBlog.BLL.ViewModels.Comments.Request;
+﻿using MyBlog.BLL.ViewModels.Comments;
 using MyBlog.DAL.Models.Comments;
 
 namespace MyBlog.BLL.Services.Interfaces;

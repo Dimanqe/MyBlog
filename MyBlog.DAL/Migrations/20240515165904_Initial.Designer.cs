@@ -11,7 +11,7 @@ using MyBlog.DAL;
 namespace MyBlog.DAL.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    [Migration("20240508183953_Initial")]
+    [Migration("20240515165904_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -141,14 +141,12 @@ namespace MyBlog.DAL.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Content")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("UserId")

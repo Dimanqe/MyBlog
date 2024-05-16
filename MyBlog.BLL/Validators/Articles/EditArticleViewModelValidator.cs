@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MyBlog.BLL.ViewModels.Articles.Request;
 
-namespace MyBlog.BLL.Validators.Users;
+namespace MyBlog.BLL.Validators.Articles;
 
 public class EditArticleViewModelValidator : AbstractValidator<EditArticleViewModel>
 {

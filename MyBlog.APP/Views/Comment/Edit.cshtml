@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.BLL.ViewModels.Comments.EditCommentViewModel
+@{
+	ViewData["Title"] = "Edition-comment page";
+}
+
+<div class="container-page">
+	<h2 class="title-margin">Редактирование комментария</h2>
+	<form method="post" asp-controller="Comment" asp-action="Edit"> <div asp-validation-summary="All" class="text-danger"></div>
+		<div style="margin-bottom: 5px">
+			<label asp-for="Id"></label><br />
+			<input class="form-control" readonly="true" asp-for="Id"/>
+			<input class="form-control" asp-for="Content" />
+			<span asp-validation-for="Content" class="text-danger"></span>
+		</div>
+		<div>
+			<input class="btn btn-sm btn-primary" type="submit" value="Сохранить" />
+		</div>
+	</form>
+</div>

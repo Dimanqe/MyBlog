@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.BLL.ViewModels.Comments.CreateCommentViewModel
+@{
+	ViewData["Title"] = "Creation-comment page";
+}
+
+<div class="container-page">
+	<h2 class="title-margin">Создание комментария</h2>
+	<form method="post" asp-controller="Comment" asp-action="Create" asp-route-articleId="@Model.ArticleId">
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div style="margin-bottom: 5px">
+			<label asp-for="Content" /><br />
+			<input class="form-control" asp-for="Content" />
+			<span asp-validation-for="Content" class="text-danger"></span>
+			<label asp-for="Author" /><br />
+			<input class="form-control" asp-for="Author" value="@User.Identity.Name" />
+			<span asp-validation-for="Author" class="text-danger"></span>
+		</div>
+		<div>
+			<input class="btn btn-sm btn-primary" type="submit" value="Создать" />
+		</div>
+	</form>
+</div>

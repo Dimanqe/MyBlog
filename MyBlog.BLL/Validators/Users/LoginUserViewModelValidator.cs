@@ -8,6 +8,6 @@ public class LoginUserViewModelValidator : AbstractValidator<LoginUserViewModel>
     public LoginUserViewModelValidator()
     {
         RuleFor(x => x.Email).NotEmpty().EmailAddress().WithMessage("Поле Почта обязательно для заполнения");
-        RuleFor(x => x.Password).Length(5).WithMessage("Минимальная длина пароля 5 символов!");
+        RuleFor(x => x.Password).Length(6).WithMessage("Минимальная длина пароля 5 символов!");
     }
 }

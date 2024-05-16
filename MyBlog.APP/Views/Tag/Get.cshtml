@@ -1,0 +1,14 @@
+﻿@model MyBlog.DAL.Models.Tags.Tag
+@{
+    ViewData["Title"] = "Tags's information";
+}
+@{
+    <h5 class="card-title">Данные тега: </h5>
+    <div class="card w-75">
+        <div class="card-body">
+            <h5 class="card-title" hidden="true">@Model.Id</h5>
+            <h5 class="card-title">@Model.Name</h5>
+        </div>
+    </div>
+    <p></p>
+}

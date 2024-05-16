@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.BLL.ViewModels.Users.Request.CreateUserViewModel
+@{
+	ViewData["Title"] = "Creation page";
+}
+
+<div class="container-page">
+	<h2 class="title-margin">Добавление пользователя</h2>
+	<form method="post" asp-controller="User" asp-action="Create">
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div style="margin-bottom: 5px">
+
+			<div style="margin-bottom: 5px">
+				<label asp-for="Firstname"></label><br />
+				<input class="form-control" asp-for="Firstname" />
+				<span asp-validation-for="Firstname" class="text-danger"></span>
+
+			</div>
+			<div style="margin-bottom: 5px">
+				<label asp-for="Lastname"></label><br />
+				<input class="form-control" asp-for="Lastname" />
+				<span asp-validation-for="Lastname" class="text-danger"></span>
+
+			</div>
+			<div style="margin-bottom: 5px">
+				<label asp-for="Login"></label><br />
+				<input class="form-control" asp-for="Login" />
+				<span asp-validation-for="Login" class="text-danger"></span>
+
+			</div>
+			<div style="margin-bottom: 5px">
+				<label asp-for="Email"></label><br />
+				<input class="form-control" asp-for="Email" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+
+			</div>
+			<div>
+				<label asp-for="Password">Пароль</label><br />
+				<input class="form-control" asp-for="Password" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+
+			<div>
+				<input class="btn btn-sm btn-primary" type="submit" value="Сохранить" />
+			</div>
+			<p>
+				<a method="get" asp-controller="User" asp-action="GetAll">Все пользователи </a>
+			</p>
+		</div>
+	</form>
+</div>

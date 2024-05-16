@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.BLL.ViewModels.Roles.Request.CreateRoleViewModel
+@{
+	ViewData["Title"] = "Creation role page";
+}
+
+<div class="container-page">
+	<h2 class="title-margin">Добавление роли:</h2>
+	<form method="post" asp-controller="Role" asp-action="Create">
+		<div style="margin-bottom: 5px">
+			<div style="margin-bottom: 5px">
+				<label asp-for="Name"></label><br />
+				<input class="form-control" asp-for="Name" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<div style="margin-bottom: 5px">
+				<label asp-for="Description"></label><br />
+				<input class="form-control" asp-for="Description" />
+				<span asp-validation-for="Description" class="text-danger"></span>
+			</div>
+			<div>
+				<input class="btn btn-sm btn-primary" type="submit" value="Сохранить" />
+			</div>
+			<p>
+				<a method="get" asp-controller="Role" asp-action="GetAll">Все роли </a>
+			</p>
+		</div>
+	</form>
+</div>

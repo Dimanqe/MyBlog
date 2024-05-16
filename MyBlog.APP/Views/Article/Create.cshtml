@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.BLL.ViewModels.Articles.Request.CreateArticleViewModel
+@{
+	ViewData["Title"] = "Creation-article page";
+}
+
+<div class="container-page">
+	<h2 class="title-margin">Создание статьи</h2>
+	<form method="post" asp-controller="Article" asp-action="Create"> <div asp-validation-summary="All" class="text-danger"></div>
+		<div style="margin-bottom: 5px">
+			<label asp-for="Title"></label><br />
+			<input class="form-control" asp-for="Title" />
+			<span asp-validation-for="Title" class="text-danger"></span>
+		</div>
+		<div style="margin-bottom: 5px">
+			<label asp-for="Content"></label><br />
+			<input class="form-control" asp-for="Content" />
+			<span asp-validation-for="Content" class="text-danger"></span>
+		</div>
+		<div style="margin-bottom: 5px">
+			<input class="form-control" readonly="true" asp-for="AuthorId" hidden="true" />
+			<span asp-validation-for="AuthorId" class="text-danger" ></span>
+			<input class="form-control" readonly="true" asp-for="Id" hidden="true" />
+			<span asp-validation-for="Id" class="text-danger"></span>
+
+		</div>
+		<div style="margin-bottom: 5px">
+			<table>
+				<label>Теги:</label>
+				<p />
+				@if (Model is not null)
+				{
+					@for (int i = 0; i < Model?.Tags?.Count; i++)
+					{
+						<div style="margin-bottom: 10px">
+							@Html.CheckBoxFor(model => model.Tags[i].IsSelected)
+							<input class="form-control" asp-for="Tags[i].Name" readonly="true" />
+							<span asp-validation-for="Tags[i].Name" class="text-danger"></span>
+							@Html.HiddenFor(model => model.Tags[i].Id)
+						</div>
+						<tr />
+					}
+				}
+			</table>
+		</div>
+		<div>
+			<input class="btn btn-sm btn-primary" type="submit" value="Создать" />
+		</div>
+	</form>
+</div>

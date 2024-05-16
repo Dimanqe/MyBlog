@@ -1,0 +1,25 @@
+﻿@model MyBlog.BLL.ViewModels.Users.Response.UserViewModel
+@{
+	ViewData["Title"] = "User's information";
+}
+@{
+    <h5 class="card-title">Данные пользователя: @Model.Email</h5>
+    <div class="card w-75">
+        <div class="card-body">
+            <h5 class="card-title">@Model.FirstName</h5>
+            <h5 class="card-title">@Model.LastName</h5>
+            <h5 class="card-title">Список ролей: </h5>
+            @foreach (var role in Model.Roles)
+            {
+                <span>@role</span>
+            }
+            <hr />
+            <h5>Посты:</h5>
+            @foreach (var article in Model.Articles)
+            {
+                <span>@article.Title; </span>
+            }
+        </div>
+    </div>
+    <p></p>
+}

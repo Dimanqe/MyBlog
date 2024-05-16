@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.BLL.Services.Interfaces;
-using MyBlog.BLL.ViewModels.Comments.Request;
+using MyBlog.BLL.ViewModels.Comments;
 using MyBlog.DAL.Models.Comments;
 using MyBlog.DAL.Models.Users;
 
-namespace MyBlog.App.Controllers;
+namespace MyBlog.API.Controllers;
 
 [ApiController]
 [Route("CommentController")]
