@@ -46,12 +46,10 @@ public class Startup
             });
         });
 
-        var workingDirectory = Environment.CurrentDirectory;
-        var projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-        var dbpath = Path.Combine(projectDirectory + "\\MyBlog\\MyBlog.DAL\\DB\\myblog.db");
+        var connectionString = Configuration.GetConnectionString("DefaultConnection");
 
         services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<EditUserViewModelValidator>());
-        services.AddDbContext<BlogDbContext>(option => option.UseSqlite($"Data Source={dbpath}"))
+        services.AddDbContext<BlogDbContext>(option => option.UseSqlServer(connectionString))
             .AddUnitOfWork()
             .AddRepositories()
             .AddServicesBL()

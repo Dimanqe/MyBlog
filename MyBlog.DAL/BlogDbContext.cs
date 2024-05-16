@@ -12,6 +12,7 @@ public class BlogDbContext : IdentityDbContext<User, Role, int>
 {
     public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options)
     {
+        //Database.EnsureDeleted();
         Database.EnsureCreated();
     }
 
